@@ -24,8 +24,8 @@ int main () {
     float pib2;
     int PontosTuristicos2;
 
-    float densidade1, pibpercapita1;
-    float densidade2, pibpercapita2;
+    float densidade1, pibpercapita1, superpoder1;
+    float densidade2, pibpercapita2, superpoder2;
 
 
 
@@ -110,6 +110,11 @@ int main () {
     densidade2 = populacao2 / area2;
     pibpercapita2 = (pib2 * 1000000000) / populacao2;
 
+    // Cálculo do super poder (quanto menor a densidade mais poder)
+
+    superpoder1 = (float)populacao1 + area1 + pib1 + PontosTuristicos1 + pibpercapita1 + (1 / densidade1);
+    superpoder2 = (float)populacao2 + area2 + pib2 + PontosTuristicos2 + pibpercapita2 + (1 / densidade2);
+
 
 
     printf("\nAqui estão seus resultados!:\n\n");
@@ -129,6 +134,7 @@ int main () {
     printf("pontos turisticos: %d\n\n", PontosTuristicos1);
     printf("densidade populacional: %.2f hab/km2\n\n", densidade1);
     printf("pib per capita: %.2f Reais\n\n", pibpercapita1);
+    printf("super poder: %.2f\n\n", superpoder1);
 
     //exibição de dados da carta 2:
 
@@ -143,8 +149,26 @@ int main () {
     printf("pontos turisticos: %d\n\n", PontosTuristicos2);
     printf("densidade populacional: %.2f hab/km2\n\n", densidade2);
     printf("pib per capita: %.2f Reais\n\n", pibpercapita2);
+    printf("super poder: %.2f\n\n", superpoder2);
 
     //conclusão da carta 2
+
+    //comparação das cartas
+
+    printf("========================\n");
+    printf("Comparação das cartas!\n");
+    printf("=========================\n\n");
+
+    printf("população: carta 1 venceu? (%d)\n\n", populacao1 > populacao2);
+    printf("área: carta 1 venceu? (%d)\n\n", area1 > area2);
+    printf("PIB: carta 1 venceu? (%d)\n\n", pib1 > pib2);
+    printf("pontos turísticos: carta 1 venceu? (%d)\n\n", PontosTuristicos1 > PontosTuristicos2);
+    printf("densidade populacional: carta 1 venceu? (%d)\n\n", densidade1 > densidade2);
+    printf("pib per capita: carta 1 venceu? (%d)\n\n", pibpercapita1 > pibpercapita2);
+    printf("super poder: carta 1 venceu? (%d)\n\n", superpoder1 > superpoder2);
+
+
+
 
     //agradecimentos
 
